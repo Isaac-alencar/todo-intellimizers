@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# How to run?
+In your terminal you can run `docker-compose up` which will build a container to you application and
+your database (postgresql).
 
-Things you may want to cover:
+Then in other terminal window you need to run `./scripts/run ./bin/rails tailwindcss:watch`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Open other terminal (it is boring I know) `./scripts/run ./bin/setup` to reload your application
+After that, you need just to keep a window to you container and other to run commands using the prefix
+`./scripts/run {regular_command_rails}`
