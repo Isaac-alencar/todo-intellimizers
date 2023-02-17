@@ -1,0 +1,29 @@
+version: '3'
+services:
+  postgresql:
+    container_name: postgresql
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=sekret
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./tmp/database/postgresql:/var/lib/postgresql/data
+
+  todo_app_intellimizers:
+    container_name: todo_app_intellimizers
+    image: ruby:3.2.0
+    working_dir: /app
+    environment:
+      - BUNDLE_PATH=/app/bundle
+      - DB_HOST=postgresql
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    command: /app/scripts/start
+    external_links:
+      - postgresql
+    depends_on:
+      - postgresql
