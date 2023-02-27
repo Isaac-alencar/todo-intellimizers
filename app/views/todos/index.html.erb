@@ -1,8 +1,13 @@
 <%= render 'shared/header' %>
 <div class="app-container">
-  <div class="input-wrapper">
-    <input type="text" class="input-wrapper__input" placeholder="What do you want to do?"/>
-    <button class="button ml-4">Add todo</button>
-  </div>
+  <%= form_with class: 'w-full', model: Todo.new do |form| %>
+    <div class="input-wrapper">
+      <%= form.text_field :description, 
+                           class: 'input-wrapper__input',
+                           placeholder: 'What do you want to do?'
+                        %>
+      <button type="submit" class="button ml-4">Add todo</button>
+    </div>
+  <% end %>
   <%= render partial: 'todos/list', locals: { todos: @todos } %>
 </div>

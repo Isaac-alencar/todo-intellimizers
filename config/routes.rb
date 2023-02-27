@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'todos#index'
   # get '/', to: 'example#index'
-  resources :todos, only: %i[index create update]
+  resources :todos, only: %i[index create update destroy]
 end
