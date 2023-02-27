@@ -2,12 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  * {
+    font-family: sans-serif;
+  }
+
+  .app-container {
+    @apply bg-zinc-700 h-screen flex items-center flex-col p-4;
+  }
+
+  .input-wrapper {
+    @apply flex justify-between w-full;
+  }
+
+  .input-wrapper__input {
+    @apply flex-1 bg-transparent border border-white text-slate-200;
+  }
+
+  .input-wrapper__input::placeholder {
+    @apply text-gray-400;
+  }
+
+  .button {
+    @apply border border-white py-2 px-4 text-slate-200;
+  }
+
+  .button:hover {
+    @apply bg-white border border-white text-zinc-700 transition-colors ease-in-out;
+  }
+
+  .todo-list {
+    @apply flex flex-col my-8 w-full;
+  }
+
+  .todo-item {
+    @apply flex items-center border border-white px-4 py-2;
+  }
+
+  .todo-item span {
+    @apply flex-1 ml-4 text-slate-200;
+  }
+
+  .todo-item svg {
+    @apply cursor-pointer;
   }
 }
-
-*/
