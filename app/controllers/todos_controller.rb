@@ -2,6 +2,8 @@
 
 # TodosController
 class TodosController < ApplicationController
+  include PublicAccessibleController
+
   def index
     @todos = Todo.all
   end

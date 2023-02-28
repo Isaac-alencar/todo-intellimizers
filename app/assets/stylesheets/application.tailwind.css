@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
   * {
     font-family: sans-serif;
+    @apply text-text-secondary font-mono
   }
 
   .app-container {
-    @apply bg-zinc-700 h-screen flex items-center flex-col p-4;
+    @apply bg-floor-0 h-screen flex items-center flex-col p-4;
   }
 
   .input-wrapper {
@@ -16,7 +18,7 @@
   }
 
   .input-wrapper__input {
-    @apply flex-1 bg-transparent border border-white text-slate-200;
+    @apply flex-1 bg-floor-1 border border-text-secondary;
   }
 
   .input-wrapper__input::placeholder {
@@ -24,11 +26,11 @@
   }
 
   .button {
-    @apply border border-white py-2 px-4 text-slate-200;
+    @apply bg-[var(--background-floor-0)] border border-text-secondary py-2 px-4;
   }
 
   .button:hover {
-    @apply bg-white border border-white text-zinc-700 transition-colors ease-in-out;
+    @apply bg-white border border-text-secondary text-floor-0 transition-colors ease-in-out;
   }
 
   .todo-list {
@@ -36,11 +38,11 @@
   }
 
   .todo-item {
-    @apply flex items-center border border-white px-4 py-2 my-2;
+    @apply flex items-center border border-text-secondary px-4 py-2 my-2;
   }
 
   .todo-item span {
-    @apply flex-1 ml-4 text-slate-200;
+    @apply flex-1 ml-4;
   }
 
   .todo-item svg {

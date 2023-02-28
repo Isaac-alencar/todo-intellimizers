@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ /* :root {
+    --background-floor-0: #32333d;
+    --background-floor-1: #373740;
+    --background-floor-2: #43434e;
+  
+    --text-highlight: white;
+    --text-primary: #e0e0e2;
+    --text-secondary: #ababb6;
+  
+    --color-danger: #ca3533;
+    --color-success: #2cad7e;
+  
+    --display-letter-spacing: 1.2px;
+    --input-letter-spacing: 0.5px;
+  } */
