@@ -5,6 +5,8 @@
 module Users
   # Users/TodosController
   class TodosController < ApplicationController
-    def index; end
+    def index
+      @todos = Todo.all.where(user_id: current_user.id)
+    end
   end
 end

@@ -1,23 +1,29 @@
 <div class="app-container">
-  <h2 class="text-2xl text-[#ababb6]">Sign up</h2>
+  <h2 class="text-2xl">Sign up</h2>
   <%= form_for(resource, 
                as: resource_name, 
                url: registration_path(resource_name),
                html: { class: 'w-full' }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="flex flex-col my-4 relative">
-      <%= f.label :email, class: 'absolute left-2 py-1 text-sm text-[#ababb6]' %>
+      <%= f.label :name, class: 'absolute left-2 py-1 text-sm' %>
+      <%= f.text_field :name,
+                        autofocus: true,
+                        class: 'bg-floor-0 border-t-0 border-l-0 border-r-0 border-b-2 border-b-text-secondary pt-6' %>
+    </div>
+    <div class="flex flex-col my-4 relative">
+      <%= f.label :email, class: 'absolute left-2 py-1 text-sm text-text-primary' %>
       <%= f.email_field :email,
                         autofocus: true,
-                        class: 'bg-[#373740] border-t-0 border-l-0 border-r-0 border-b-2 border-b-[#ababb6] pt-6' %>
+                        class: 'bg-floor-0  border-t-0 border-l-0 border-r-0 border-b-2 border-b-text-secondary pt-6' %>
     </div>
     <div class="flex flex-col my-4 relative">
-      <%= f.label :password, class: 'absolute left-2 py-1 text-sm text-[#ababb6]' %>
-      <%= f.password_field :password, class: 'bg-[#373740] border-t-0 border-l-0 border-r-0 border-b-2 border-b-[#ababb6] pt-6' %>
+      <%= f.label :password, class: 'absolute left-2 py-1 text-sm' %>
+      <%= f.password_field :password, class: 'bg-floor-0  border-t-0 border-l-0 border-r-0 border-b-2 border-b-text-secondary pt-6' %>
     </div>
     <div class="flex flex-col my-4 relative">
-      <%= f.label :password, class: 'absolute left-2 py-1 text-sm text-[#ababb6]' %>
-      <%= f.password_field :password, class: 'bg-[#373740] border-t-0 border-l-0 border-r-0 border-b-2 border-b-[#ababb6] pt-6' %>
+      <%= f.label :password, class: 'absolute left-2 py-1 text-sm' %>
+      <%= f.password_field :password, class: 'bg-floor-0  border-t-0 border-l-0 border-r-0 border-b-2 border-b-text-secondary pt-6' %>
     </div>
     <div class="actions">
       <%= f.submit "Sign up", class: 'button mt-5 hover:cursor-pointer' %>

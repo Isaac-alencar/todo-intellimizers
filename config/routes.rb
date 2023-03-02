@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :todos, only: %i[index create update destroy]
 
   resources :users, only: %i[index] do
-    member do
+    collection do
       resources :todos, module: :users, only: %i[index]
     end
   end

@@ -1,0 +1,20 @@
+<%= render 'shared/header' %>
+<div class="app-container">
+  <h1>Hello, <%= current_user.name %></h1>
+  <div class="mt-5 w-full">
+    <ul class="todo-list">
+      <% @todos.each do |todo| %>
+        <li class="flex items-center justify-between border border-text-secondary p-2 my-1">
+          <span><%= todo.description %></span>
+          <span>status ➭ 
+            <% if todo.completed %>
+              Completed
+            <% else %>
+              To-Do
+            <% end %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

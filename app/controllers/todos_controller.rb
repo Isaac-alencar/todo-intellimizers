@@ -5,11 +5,15 @@ class TodosController < ApplicationController
   include PublicAccessibleController
 
   def index
-    @todos = Todo.all
+    @todos = if current_user
+               Todo.order(created_at: :desc).where(user_id: current_user.id)
+             else
+               []
+             end
   end
 
   def create
-    user = User.first
+    user = current_user
     @todo = Todo.new(description: todo_params[:description], user:)
 
     @todo.save || flash[:notice] = @todo.errors.full_messages
