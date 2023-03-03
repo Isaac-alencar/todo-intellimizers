@@ -9,5 +9,6 @@
       <button type="submit" class="button ml-4">Add todo</button>
     </div>
   <% end %>
+  <%= render 'shared/flashes' %>
   <%= render partial: 'todos/list', locals: { todos: @todos } %>
 </div>

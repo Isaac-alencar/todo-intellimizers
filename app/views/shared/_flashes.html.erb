@@ -1,0 +1,12 @@
+<% flash.each do |type, msg| %>
+  <% if type === 'error' %>
+    <span class="flex items-center bg-red-300 border border-color-danger px-4 py-2 mt-4 text-text-highlight">
+      <%= msg %>
+    </span>
+  <% end %>
+  <% if type === 'notice' %>
+    <span class="flex items-center bg-green-200 border border-color-success px-4 py-2 mt-4 text-gray-700">
+      <%= msg %>
+    </span>
+  <% end %>
+<% end %>

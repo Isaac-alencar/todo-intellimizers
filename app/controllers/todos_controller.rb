@@ -23,9 +23,9 @@ class TodosController < ApplicationController
 
   def destroy
     @todo = Todo.find(params[:id])
-    @todo.destroy
+    authorize @todo
 
-    redirect_to action: :index
+    redirect_to action: :index if @todo.destroy
   end
 
   private
