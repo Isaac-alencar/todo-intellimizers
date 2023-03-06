@@ -1,9 +1,10 @@
 <% if todos.empty? %>
   <div class="flex justify-center my-8 w-full">
-    <span class="text-slate-200">Nothing to show 👋. Try to add a new todo</span>
+    <span>Nothing to show 👋. Try to add a new todo</span>
   </div>
 <% else %>
   <div class="todo-list">
+    <span><%= status %></span>
     <% todos.each do |todo| %>
       <%= render partial: 'todos/item', locals: { todo: }%>
     <% end %>

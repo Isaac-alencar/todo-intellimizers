@@ -11,7 +11,8 @@
       </div>
     <% end %>
     <%= render 'shared/flashes' %>
-    <%= render partial: 'todos/list', locals: { todos: @todos } %>
+    <%= render partial: 'todos/list', locals: { todos: @todos.uncompleted_todos, status: 'ToDo' } %>
+    <%= render partial: 'todos/list', locals: { todos: @todos.completed_todos, status: 'Completed' } %>
   <% else %>
     <h2 class="text-slate-200">you must be logged in to add a new todo</h2>
     <div class="flex mt-4 gap-2">

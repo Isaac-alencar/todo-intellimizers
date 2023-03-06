@@ -8,6 +8,9 @@ class Todo < ApplicationRecord
 
   validates :description, presence: true
 
+  scope :completed_todos, -> { where(completed: true) }
+  scope :uncompleted_todos, -> { where(completed: false) }
+
   def set_defaults
     self.completed = false
   end
