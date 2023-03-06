@@ -2,6 +2,10 @@
 
 # TodosPolicy
 class TodoPolicy < ApplicationPolicy
+  def update?
+    belongs_to_user?
+  end
+
   def destroy?
     belongs_to_user?
   end

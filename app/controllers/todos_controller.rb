@@ -21,6 +21,14 @@ class TodosController < ApplicationController
     redirect_to action: :index
   end
 
+  def update
+    @todo = Todo.find(params[:id])
+    authorize @todo
+
+    @todo.toggle!(:completed)
+    render json: { message: 'Completed 😊' }
+  end
+
   def destroy
     @todo = Todo.find(params[:id])
     authorize @todo
